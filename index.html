@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>Cratileo的小图书馆</title>
+        <meta name="author" content="C">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <link rel="icon" href="">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/Cratileo/cratileo.github.io/css/fonts.min.css">
+        <link rel="stylesheet" href="/Cratileo/cratileo.github.io/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.js"></script>
+        
+        
+    <meta name="generator" content="Hexo 5.4.2"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/Cratileo/cratileo.github.io/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/Cratileo/cratileo.github.io/">
+            <span class="title">Cratileo的小图书馆</span>
+        </a>
+        
+        <a href="/Cratileo/cratileo.github.io/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/Cratileo/cratileo.github.io/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/Cratileo/cratileo.github.io/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/Cratileo/cratileo.github.io/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/Cratileo/cratileo.github.io/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Cratileo的小图书馆</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/Cratileo/cratileo.github.io/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/Cratileo/cratileo.github.io/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/Cratileo/cratileo.github.io/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/Cratileo/cratileo.github.io/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/Cratileo/cratileo.github.io/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        <div id="home-head">
+    <div id="home-background" style="background-image: url()"></div>
+    
+    <div id="home-info" class="home-info" @click="home_click">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>Cratileo的小图书馆</h1>
+                <h3></h3>
+                <h5></h5>
+            </div>
+        </span>
+    </div>
+    
+</div>
+
+<div id="home-posts-wrap" class="">
+    <div id="home-posts">
+        <div id="posts">
+            
+
+<div class="post">
+    <a href="/Cratileo/cratileo.github.io/2022/10/29/gossip/">
+        <h2 class="post-title">写在网管部招新之后</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2022/10/29
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <pre><code>    一直以来，总想在一些大事件之后随便写点东西，或是排解心中烦恼，或是发发牢骚。奈何受限于人性懒惰，难于动笔，错过良多。
+拖至今日，深感不可再拖，遂记下所思所想，以供未来考古。
+从被交大录取开始，网管部既是我第一个接触到的，也是我几乎唯一感兴趣的学生组织。在暑假水群的一个多月里，在群里一起水群的朋
+友成为了我在交大认识的第一批朋友。之后更是将进部作为自己目前的最高目标来努力。当时还是很有自信，认为自己必然能进部。现在
+看来，不过是一点自负甚至是自大罢了。也因此，我没有做其他的规划，把自己绑在了一条迷向的船上，不知道最终驶向何方。直至今日，
+船撞上冰山，才如梦初醒，大彻大悟。&lt;!-- more --&gt;
+
+    重新回顾一下那天二面的表现，说实话，很难挑出什么出彩的地方，甚至说是瑜不掩瑕也不为过。我唯二参加过的两场面试，就是
+nimo的一二面，对于面试，确实是一无所知，甚至不知道会是怎么一个样子。我认为二面可能会是面试官与我们一对一深入交流，既然又
+不考察专业能力，大概和b乎故事会上的面试会差不多吧，至少比较轻松，因而不做任何准备就单刀赴会。然而，这种单纯的幻想在大门推
+开之时就已经被打破。一屋子的面试官让人紧张，而接下来连环的问题更是让我感到慌乱。对于舆情，我几乎没有接触的经验，危机公关更
+是不会。从人单纯的本能，对于别人的诬告，必然要进行澄清。但今年的众多魔幻新闻也告诉我，没有人在乎真相，他们只在乎热点，哪怕
+你本是清白的，但也只能是百口莫辩。那直接用强硬手段压下舆论？先不谈这样只是在表面上风平浪静而海下暗潮涌动，这也是我不希望使
+用的一种方法。诚然，网管部是一个校内的学生部门，不良的舆情自然会影响其声誉。但在目前，让我面对舆论的浪潮单打独斗的话，只能
+是毫无招架之力，最后伤得体无完肤。在这样理想与现实强烈撕裂的大背景下，我能做的，只能是安稳本分做人，试图尽量不影响周围的一
+切，也不被麻烦找上身。但魔幻新闻同样告诉我，麻烦并不是我想让它不来就不来的。之前在西南小县城相对封闭的小环境中，人和事都相
+对比较简单。但来到上海，来到交大这样一个汇集五湖四海学生的小社会，人际关系也变得复杂起来，当麻烦找上身时，究竟该怎么处理呢？
+我不知道，在这个舆论越来越走向偏锋、从众的时代，我希望有人能教我怎么处理这些，而不是惹出事之后，被铁拳砸过才知道疼。可惜，
+最终没有留给我学习的机会，可能我确实差别人太多，榆木脑袋不可教也吧。
+
+    另外，我还在面试中犯了一个严重的错误。由于一开始的误判，自己就没有很严肃的对待本次面试，部分问题的回答并不严谨。可能也
+正是因为如此，才会被认为没有从用户角度考虑吧，也可能我确实没有从用户角度考虑吧。最初，对nimo浅显的认识告诉我，只要怀着一颗
+想要为同学服务的心就行了，未来的关系处理、舆论影响、技术教学经验等，学长们会在试用期一点点教给我们这些菜鸟，我们也能在试用
+期逐渐的磨练自己。但这也只是美好的愿望罢了，显然，网管部不是社团而是学生服务部门，受限于部门规模和实际需求以及超长的实习期，
+还有其中可能面临的麻烦和祸端，不可能把所有人都收进来，再在之后进行淘汰选拔。因此在候选人太多的情况下，淘汰掉需要更费力去进
+行培养的，而留下更有天性更适合的人倒也是符合部门利益的一种做法，只是会让被淘汰者比较难受罢了。
+
+    现在回想一下我入部的动机，是为了钱？为了技术培养？还是别的什么。论钱，nimo的工资不见得比别的部门甚至是临时助管的工资高
+，而且这也不是我想要的。论技术，不依靠nimo倒也能自学，但不进部的话我学它干嘛？思来想去，最主要的目的，其实是想要认识更多的
+人，结识更多的朋友，和大家一起学习，一起成长，在nimo这个大家庭中感受到一点温暖。从入学开始，也确实在这之中认识了很多优秀的
+同辈与学长。但现在，大厦倾倒，而我对未来的规划也以沦为废纸，并且没有新的方案补上来。入学三个月，大部分时间却都只能在线上赛
+博上课。尽管已恢复线下，但未来走向何方，还仍是柳岸花未明。
+
+    这是交大带给我的第一课，在迎头向上时感受一次痛击，让自己学会从阴暗的天空下走出来，明白大学生活不是一帆风顺。这过程是痛
+苦的，前路是不明朗的，但生活还得继续，明天还会到来，未来的路还要自己走。可能未来还能找到一点别的事充实自己吧，但学生组织是
+应该是不会再去加入了，毕竟，何必让本就存在裂缝的心，再次裂开呢？伤痕需要时间抚平，让我痛苦的不是面试被拒，而是从此失去了唯
+一的一次机会，如同高考过独木桥，你落到河中，就只能再回到那一年，重新来过，而之前的努力就只随着失败化为泡影。
+   胡乱所言，只增笑耳。
+</code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/Cratileo/cratileo.github.io/tags/碎碎念/" style="color: #00a596">
+                碎碎念
+            </a>
+        </span>
+        
+    </div>
+    <a href="/Cratileo/cratileo.github.io/2022/10/29/gossip/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/Cratileo/cratileo.github.io/2022/10/29/hello-world/">
+        <h2 class="post-title">Hello World</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2022/10/29
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+</code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
+</code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
+</code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
+</code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/Cratileo/cratileo.github.io/2022/10/29/hello-world/" class="go-post">阅读全文</a>
+</div>
+
+             
+<div class="page-current">
+    <div class="prev">
+        
+    </div>
+    <div class="page-index">
+        
+        <span class="current">
+            1
+        </span>
+        
+    </div>
+    <div class="next">
+        
+    </div>
+</div>
+        </div>
+    </div>
+    
+    <div id="home-card">
+        <div id="card-div">
+    <div class="card-style" style="width: 300px">
+        <div class="avatar">
+            <img src=" " alt="avatar">
+        </div>
+        <div class="name">
+            C
+        </div>
+        <div class="descriptions">
+            
+            <div class="description">
+                Description...
+            </div>
+            
+        </div>
+        <div class="icon-links">
+            
+        </div>
+        <div class="friend-links">
+            
+        </div>
+    </div>
+</div>
+    </div>
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 20xx - 2022 Cratileo的小图书馆
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @C
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/Cratileo/cratileo.github.io/js/particlex.js"></script>
+        <script src="/Cratileo/cratileo.github.io/js/showimg.js"></script>
+        
+
+        <canvas
+        id="fireworks"
+        style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+        <canvas
+        id="background"
+        style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1"></canvas>
+        <script src="/js/background.js"></script>
+
+        <div id="cursor"></div>
+        <script src="/css/cursor.css"></script>
+        <script src="/js/cursor.js"></script>
+        
+    </body>
+</html>
