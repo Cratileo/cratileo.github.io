@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>数字电子技术(3) | Cratileo的小图书馆</title>
+        <meta name="author" content="Cratileo">
+        <meta name="description" content="欢迎来到这个偏僻的小图书馆">
+        <meta name="keywords" content="">
+        <link rel="icon" href="/a.png">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        
+        
+    <meta name="generator" content="Hexo 5.4.2"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Cratileo的小图书馆</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Cratileo的小图书馆</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>数字电子技术(3) </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/20
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习笔记/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习笔记
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/数电/" style="color: #ffa2c4">
+                    数电
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h1 id="复合逻辑门：异或门、同或门、或非门、与非门"><a href="#复合逻辑门：异或门、同或门、或非门、与非门" class="headerlink" title="复合逻辑门：异或门、同或门、或非门、与非门"></a>复合逻辑门：异或门、同或门、或非门、与非门</h1><p>与非门(The NAND Gate)其实从本质上看就是与门与非门的结合，非门将与门输出的信号进行反向，在元件图像上来看也是如此。或非门(The NOR Gate)也是一样的机制，十分甚至九分相似。<br>异或门(The Exclusive-OR Gate, XOR)执行的是类似于比较的逻辑运算。异或门同样存在两个输入端和一个输出端，多输入异或门由多个基本异或门构成，当输入信号全部一致时，异或门输出低电平信号，而当输入信号存在不同时，输出高电平（着重在”异”上）。XOR的逻辑符号是一个被圆圈包围的加号。在国标中，这玩意的图形表示是一个方框，内写“=1”。</p>
+<span id="more"></span>同或门(The Exclusive-NOR Gate, XNOR)与异或门类似，也是一种进行比较运算的逻辑门。不同的是，同或门进行的是输入相同时输出高电平、不同时输出低电平的运算，与异或门相反（着重于"同"）。也可以将同或门看作异或门与非门的组合（异或非门）。XNOR的符号是一个被圆圈包围的点。同或门的国标图像和异或门差不多，就是在输出端多了个非(小圆圈)。
+
+<p>NAND Gate 与 NOR Gate也可以相互转化，例如：可以用两个与非门构成一个或非门，倒过来也一样，两个或非门构成一个与非门。</p>
+<blockquote>
+<p>NOR(A, B) = NAND(NAND(A, A), NAND(B, B))<br>NAND(A, B) = NOR(NOR(A, A), NOR(B, B))</p>
+</blockquote>
+<h1 id="固定函数逻辑门与可编程逻辑"><a href="#固定函数逻辑门与可编程逻辑" class="headerlink" title="固定函数逻辑门与可编程逻辑"></a>固定函数逻辑门与可编程逻辑</h1><p>固定函数逻辑门(Fixed Function Logic Gate)，是一种已经固定功能的逻辑门，固定功能的芯片就是由这类逻辑门构成。而可编程逻辑的功能并不固定，可以人为进行改变调整，各类CPU、单片机芯片就是这类逻辑。其底层实现不属于数电的研究范畴。</p>
+<h1 id="布尔运算及其表达式"><a href="#布尔运算及其表达式" class="headerlink" title="布尔运算及其表达式"></a>布尔运算及其表达式</h1><p>布尔运算(Boolean Opreation)是布尔代数的一套运算系统，由且仅由0、1构成，在运算时仅保留最高位数字，即1+1=1。<br>布尔加运算(Boolean Addition)与代数加法一致，在电路中的实现由逻辑门中的或运算完成。布尔乘法(Boolean Multiplication)也与代数乘法一致，，比如1x0=0，在电路中由与逻辑门实现。<br>布尔运算也满足初等代数的交换律与结合律。<br><strong>布尔运算的一些运算定律</strong><br>下面有12条运算规则：(A B C可为任意独立组合)<br><img src="/pic/D301.png" alt="12"></p>
+<blockquote>
+<p>德摩根定律(DeMorgan’s Theorems):<br>$$\overline{XY}=\overline{X}+\overline{Y}$$<br>$$\overline{X+Y}=\overline{X}\overline{Y}$$<br>多余项乘积定理(Consensus Theorem),算数式表现为：</p>
+</blockquote>
+<h1 id="布尔运算化简与转化的几种形式"><a href="#布尔运算化简与转化的几种形式" class="headerlink" title="布尔运算化简与转化的几种形式"></a>布尔运算化简与转化的几种形式</h1><p>先介绍一下SOP和POS。<br>标准SOP(Standard Sum of Product)是将复杂布尔表达式化简为多项最小乘积项的和，以下是一些规则：</p>
+<blockquote>
+<p>乘积中不得含有重复变量，比如AAB<br>每项中的变量只能独立取反，<br>每一项中均含有所有的变量<br>满足以上条件的每项乘积项称为最小项(Minterm).</p>
+</blockquote>
+<p>将SOP转化为Standard SOP的方法：若某一乘积项中缺少某个变量，对该项乘以缺少变量与其的反的和然后拆开，例如：<br>同样的，标准POS(Product of Sum)是将复杂布尔表达式化简为多项最小和的积，规则与Standard SOP类似。满足POS规则的每一求和项称为最大项(Maxterm)。<br>将POS转化为标准POS的方法:若某一求和项中缺少某个变量，则将缺少的变量及其反变量的乘积加在缺少项中，然后展开。</p>
+<h1 id="布尔表达式与真值表"><a href="#布尔表达式与真值表" class="headerlink" title="布尔表达式与真值表"></a>布尔表达式与真值表</h1><p>真值表(Truth table)是直观反应各变量与布尔表达式的关系的表格，现在重新提及标准SOP和标准POS。这两种标准表达式使得变量值与真值表输出值的对应关系变得十分明朗直观。对于SOP，能很容易找到输出为1的情况；而对于POS，则是能很快找到输出为0的情况。<br>下面给出一个例子：</p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Cratileo的小图书馆
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Cratileo
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas
+    id="fireworks"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+    <script src="/js/fireworks.js"></script>
+
+    <canvas
+    id="background"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1"></canvas>
+    <script src="/js/background.js"></script>
+        
+        
+    </body>
+</html>

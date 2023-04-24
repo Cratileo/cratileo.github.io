@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>数字电子技术(2) | Cratileo的小图书馆</title>
+        <meta name="author" content="Cratileo">
+        <meta name="description" content="欢迎来到这个偏僻的小图书馆">
+        <meta name="keywords" content="">
+        <link rel="icon" href="/a.png">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        
+        
+    <meta name="generator" content="Hexo 5.4.2"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Cratileo的小图书馆</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Cratileo的小图书馆</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>数字电子技术(2) </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/16
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习笔记/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习笔记
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/数电/" style="color: #00a596">
+                    数电
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h2 id="二进制编码：原码、反码与补码"><a href="#二进制编码：原码、反码与补码" class="headerlink" title="二进制编码：原码、反码与补码"></a>二进制编码：原码、反码与补码</h2><p>计算机以0和1的方式储存数据，任何十进制下的基本运算，在计算机中都要先转换为二进制编码进行运算。但计算机中只有加法器（曾经有减法器，但由于硬件开销太大取消了），因此，计算机无法直接处理二进制减法。但计算机中各种数据类型的储存量是有上限的，比如8位整型有符号数(8 bits signed number)的储存范围就是-128～127，并且有一个有趣的特性，当输入数据范围超过表示范围时，就会越过数据上限而从数据下限开始。比如127+1由于超过了表示上限，数据将会溢出，结果就会变成-128，由此，得出了一种代替减法的方法：将减法转换为加法。<br>为了了解减法是如何转换为加法的，首先要了解几个概念。</p>
+<span id="more"></span>
+
+<h1 id="原码、反码"><a href="#原码、反码" class="headerlink" title="原码、反码"></a>原码、反码</h1><p>对于有符号二进制数，由于要判断数字的正负，所以第一位（最高位）被设置为符号识别位，规定0为正数、1为负数。剩下的位数为数字位，储存实际数据，这称为原码()。同时，使用反码来表示负数，反码即对负数原码的数字位进行取反。但问题还没有完全解决，反码出现了另一个问题，0000在反码中表示0，但1000此时则代表-0，一样也是0，这样就出现了储存资源的浪费，并且计算机还要对-0进行特殊处理将其转换为+0，又浪费了硬件开销。因此，急需一个新的编码方式来解决这些问题。</p>
+<h1 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h1><p>补码就是这样一种新的编码方式。补码将负数域内的数据向左偏移了一位，也就是反码+1（这其实是一种不严谨的说法，本质是取绝对值的同余数），解决了-0的问题。当出现减法运算时，将负数原码转换为其补码进行相加，数据整体会增大溢出一位，去掉最高一位后（计算机一般会将它放到寄存器中），余下的数据就已经完成了减法的运算。这时，减法就已经可以用加法代替了。<br>以四位有符号数为例，6-2=6+-2=4，二进制为0110-0010=0110+1110=10100-&gt;去掉最高位取得0100=4。这就是计算机中涉及有符号数的加减运算的计算方式。此外，补码对最高位还有一种新的解释，原本最高位为符号位，但还可以解释为该位对应数据的负数加权，比如：补码1000是-8，可以解释为反码1111取补码，也可以理解为最高位1代表的是-8。<br>涉及符号的乘除法仍然采用原码进行计算，只是在最后判断符号。从本质上来说，由于计算机只有加法器，所以所以的四则运算都是通过加法来完成的。</p>
+<h2 id="十六进制：产生与转换"><a href="#十六进制：产生与转换" class="headerlink" title="十六进制：产生与转换"></a>十六进制：产生与转换</h2><p>二进制虽然可以很好的被计算机所处理，但是在大数表示中很不好被人识别读取（太长了），为了方便阅读，一种便于与二进制进行转换的高进制编码呼之欲出——十六进制由此诞生。<br>十六进制，顾名思义，即为满十六进一的数字系统，对于超出10的数据用ABCDEF来表示。二进制与十六进制的转换十分方便，由于2的4次方正好为16，因此二进制与十六进制之间的转换就是二进制从低到高的每四位与十六进制的每一位相互对应。例如，二进制数11000110，按四位进行分割，得到1100｜0110，分别进行映射，1100=12=C，0110=6，故16进制转换得C6。<br>八进制是另一种便于与二进制进制转换的数字系统。基本上与十六进制相同，只是映射位数为3位。</p>
+<h2 id="BCD编码"><a href="#BCD编码" class="headerlink" title="BCD编码"></a>BCD编码</h2><p>BCD码是一种按数字位对应的编码方式，映射范围为0～9，即将十进制的每位数字编码为二进制数。比如35在BCD码下的数据便是00110101。由于其方便了进制转换，BCD码常用于数字电路系统的数据显示。使用专用芯片就可以将计算机中储存的二进制数在显示屏上以十进制显示。</p>
+<h2 id="格雷码-Gray-Code"><a href="#格雷码-Gray-Code" class="headerlink" title="格雷码(Gray Code)"></a>格雷码(Gray Code)</h2><p>Gray Code是一种特殊的二进制编码方式，其重新定义了二进制与十进制之间的转换关系，使得每位数字之间只有一个bit位的差异。这种编码由于其特殊的性质，常被用于各种需要校验的数据，比如通信。<br>从自然二进制码转换到经典Gray Code的过程叫做编码，本质是相邻位数字之间的异或运算，从右向左比较相邻两位数字，最高位补零。比如二进制数110-&gt;0110-&gt;编码后得到101</p>
+<h2 id="校验码-ERROR-Code"><a href="#校验码-ERROR-Code" class="headerlink" title="校验码(ERROR Code)"></a>校验码(ERROR Code)</h2>
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Cratileo的小图书馆
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Cratileo
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas
+    id="fireworks"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+    <script src="/js/fireworks.js"></script>
+
+    <canvas
+    id="background"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1"></canvas>
+    <script src="/js/background.js"></script>
+        
+        
+    </body>
+</html>

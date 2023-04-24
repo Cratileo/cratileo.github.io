@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>数字电子技术(4) | Cratileo的小图书馆</title>
+        <meta name="author" content="Cratileo">
+        <meta name="description" content="欢迎来到这个偏僻的小图书馆">
+        <meta name="keywords" content="">
+        <link rel="icon" href="/a.png">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        
+        
+    <meta name="generator" content="Hexo 5.4.2"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Cratileo的小图书馆</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Cratileo的小图书馆</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>数字电子技术(4) </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/27
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习笔记/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习笔记
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/数电/" style="color: #00a596">
+                    数电
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h1 id="卡诺图-The-Karnaugh-Map"><a href="#卡诺图-The-Karnaugh-Map" class="headerlink" title="卡诺图(The Karnaugh Map)"></a>卡诺图(The Karnaugh Map)</h1><p>在之前学过的布尔表达式的化简方法，在实际计算中显得繁琐，并且难以确定是否化到了最简型。卡诺图提供了一种系统性的方法来高效准确的简化布尔表达式。<br>对于卡诺图的构造，有一些基本要求：在卡诺图中，相邻单元的数据只有一个变量的值发生变化，并且左上角从全零开始。变量按数量进行均分，从列开始，记于行列上。若为奇数，少的一半放在列上，例如：</p>
+<span id="more"></span>
+<p>卡诺图与SOP表达式的映射</p>
+<blockquote>
+<p>Step1:将SOP表达式中的每个最小项的1形式找出（可以为非标准SOP，但要足够熟练）</p>
+<p>Step2:对卡诺图上的1进行分组。要求：每组中单元的数目需为2的n次方，组只能是矩形，并且每组中的单元格需要相邻，组中尽可能包含多的1（越多结果越简单）。每个1都要进组，单一个1可以进多个组。<br>补充（相邻）：不只是实际位置相邻才算，左右列，上下行，甚至四个角都算是相邻位置。对于五个及以上变量的卡诺图，还存在沿列中线的对称相邻。</p>
+<p>Step3:对每个组进行汇总，其中0、1都取到过的变量消除掉，写出剩下的表达式（组值要求为1），将每个组的结果相加。</p>
+</blockquote>
+<p>卡诺图和POS表达式的映射<br>具体步骤上和SOP没太大区别。主要区别在于POS找0，和要求为0，组结果相乘。</p>
+<p>当然，得到具体的卡诺图之后，也可以在SOP与POS之间进行交换，即：对一个卡诺图可以任意进行0或1的分组。无论是SOP最简式还是POS最简式，都是最简式，且并不唯一，两者之间不跨范围比较。</p>
+<h1 id="Quine-McCluskey-Method"><a href="#Quine-McCluskey-Method" class="headerlink" title="Quine McCluskey Method"></a>Quine McCluskey Method</h1><p>对于含五个以上变量的卡诺图，常规的分组简化方法已经变得很难实现，为了简化这样的多变量布尔表达式，这里再次引入一种新的分组方法。<br>这种分组方法不是依赖卡诺图来实现，而是通过真值表写出。首先，将每个结果为1的表达式写出，记为m0到mi，/(Under building)<br><strong>一般不考，不写了（懒）</strong></p>
+<h1 id="半加器与全加器"><a href="#半加器与全加器" class="headerlink" title="半加器与全加器"></a>半加器与全加器</h1><p>半加器(half-adder)，是加法器的一种，其没有进位输入端（Carry input）。全加器(Full-adder)与半加器的区别是其有三个输入端，包括半加器不包含的进位输入，这使得全加器能够进行完全的加法操作。全加器的实现是由两个半加器组成的</p>
+<h1 id="加法器的构建"><a href="#加法器的构建" class="headerlink" title="加法器的构建"></a>加法器的构建</h1><p>n位加法器由n个全加器相连组成，其中A1-An作为第一个n位数的输入端，B1-Bn为第二个数的输入端，全加器的Sum输出该位的进位结果给下一位的全加器C端，最低位全加器C端接地。</p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Cratileo的小图书馆
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Cratileo
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas
+    id="fireworks"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+    <script src="/js/fireworks.js"></script>
+
+    <canvas
+    id="background"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1"></canvas>
+    <script src="/js/background.js"></script>
+        
+        
+    </body>
+</html>

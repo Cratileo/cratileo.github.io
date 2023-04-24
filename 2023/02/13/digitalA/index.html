@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>数字电子技术学习笔记 (1) | Cratileo的小图书馆</title>
+        <meta name="author" content="Cratileo">
+        <meta name="description" content="欢迎来到这个偏僻的小图书馆">
+        <meta name="keywords" content="">
+        <link rel="icon" href="/a.png">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        
+        
+    <meta name="generator" content="Hexo 5.4.2"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Cratileo的小图书馆</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Cratileo的小图书馆</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>数字电子技术学习笔记 (1) </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/13
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习笔记/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习笔记
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/数电/" style="color: #00a596">
+                    数电
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <p>最近开始学习数电了，全英文教材实在是看得眼花缭乱、无从下笔。本文作为对课本学习内容的一点总结与整理，方便理解记忆知识。<br>使用的教材: Thomas L.Floyd《Digital Fundamentals》第十一版</p>
+<span id="more"></span>
+
+<h1 id="1-数字信号与模拟信号"><a href="#1-数字信号与模拟信号" class="headerlink" title="1. 数字信号与模拟信号"></a>1. 数字信号与模拟信号</h1><p>电信号主要可以被分为两类：数字(Digital)信号和模拟(Analog)信号。模拟量是一类<strong>连续的</strong>量，在数学上图像形似连续函数。模拟量在生活中也随处可见，例如连续时间下的温度、连续时间下火车行驶的距离、连续距离下点光源的光照强度等。如图：<br><img src="/pic/01.png" alt="温度随时间变化的图像"><br>而数字量则是一类<strong>分立的、不连续的</strong>量，类似于散点图或存在跳跃间断点的函数图，<strong>我自己</strong>理解为数字量是存在瞬时突变的量，理想情况下变化瞬间完成。<br>相比于模拟信号，数字信号有抗干扰强、易于储存等优点。由于数字信号只存在01两种编码，在一定的干扰强度下也依然能够分辨出高低电平位，而模拟信号则较难还原，因此，数字信号的传输距离也较模拟信号更远。</p>
+<p>下面重点来看数字波形</p>
+<p>在实际运用中，数字信号采用<strong>0和1</strong>进行编码，在电路分析中，约定将0定义为低电位，1定义为高电位。理想图形中，0至1的跃迁是瞬间完成的，呈现为方波电路的特性<br><img src="/pic/02.png" alt="方波电路"><br>然而，实际条件下并不存在完美的方波脉冲，受到噪音的干扰，脉冲信号的图像往往会呈现非理想化的波动<br><img src="/pic/03.png" alt="非理想脉冲信号"></p>
+<p>在上图中，脉冲电位从低电平到高电平的改变消耗了一点时间，我们称之为**上升时间(raise time)<strong>，一般约定脉冲电位从</strong>振幅(Amplitude)<strong>的10%上升至90%所消耗的时间为脉冲时间，</strong>下降时间(Fall time)<strong>同理，为上升的逆过程。而从上升期电位达到50%振幅值到下降期电位达到振幅值50%的时间称为</strong>脉冲宽度(Pulse width)**。此外，还存在脉冲的过充和过放，但这门课主要讨论的还是理想化的模型，故不多介绍。</p>
+<h1 id="2-数字信号的时序与周期"><a href="#2-数字信号的时序与周期" class="headerlink" title="2. 数字信号的时序与周期"></a>2. 数字信号的时序与周期</h1><p><strong>周期(Period)<strong>的定义已经是很熟悉的内容了，对于数字波形，存在周期性和非周期性两种波形，对于周期性波形，有一个重要的概念：</strong>占空比(duty cycle)<strong>。名字虽然叫占空比，但实际定义却是</strong>通电时间占周期总时间的比值</strong>。在实际生活中，PWM技术便是利用调整占空比的方式来编码模拟信号的。<br>**时序(Clock)**是另一个数字信号中的重要概念。数字信号中一个脉冲周期被定义为时序。在实际工程中，时序也代表了数据处理速度，时序越快，单位时间内能处理的数据量也就越大。对于时序与周期长度，可以简要认为</p>
+<blockquote>
+<p>1Khz=1ms<br>1Ghz=1ns</p>
+</blockquote>
+<h1 id="3-三种基本逻辑门"><a href="#3-三种基本逻辑门" class="headerlink" title="3. 三种基本逻辑门"></a>3. 三种基本逻辑门</h1><p>在数字电路中，存在三种基本逻辑门：与门(The AND gate)、或门(The OR gate)和非门(The Inverter)，由三种基本逻辑门可以组成更复杂的逻辑器件：如锁存器、触发器。其中，非门为单逻辑门，即只接受、输出一个信号，而与、或门均接受多个信号，但最终也只会根据逻辑条件关系输出一个信号。<br>顾名思义，与、或、非三个字表示了三种逻辑门的逻辑关系：<br>非门对输入信号取反后输出，如输入高电位会输出低电位<br>或门则是分析所有输入信号，若存在高电平，则输出为高电平，若不存在高电平，则输出低电平<br>与门同样也是分析所有输入信号，但与或门不同的是，只有当所有输入信号均为高电平时，才输出高电平，否则输出低电平</p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Cratileo的小图书馆
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Cratileo
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas
+    id="fireworks"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+    <script src="/js/fireworks.js"></script>
+
+    <canvas
+    id="background"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1"></canvas>
+    <script src="/js/background.js"></script>
+        
+        
+    </body>
+</html>

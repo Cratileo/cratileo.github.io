@@ -1,0 +1,604 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>Cratileo的小图书馆</title>
+        <meta name="author" content="Cratileo">
+        <meta name="description" content="欢迎来到这个偏僻的小图书馆">
+        <meta name="keywords" content="">
+        <link rel="icon" href="/a.png">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        
+        
+    <meta name="generator" content="Hexo 5.4.2"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Cratileo的小图书馆</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Cratileo的小图书馆</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        <div id="home-head">
+    <div id="home-background" style="background-image: url(/01.jpg)"></div>
+    
+    <div id="home-info" class="home-info" @click="home_click">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>Cratileo的小图书馆</h1>
+                <h3></h3>
+                <h5>欢迎来到这个偏僻的小图书馆</h5>
+            </div>
+        </span>
+    </div>
+    
+</div>
+
+<div id="home-posts-wrap" class="">
+    <div id="home-posts">
+        <div id="posts">
+            
+
+<div class="post">
+    <a href="/2023/04/23/DigitalE/">
+        <h2 class="post-title">决战数电-复习补充</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/学习笔记/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习笔记
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/4/23
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="0-名词解析"><a href="#0-名词解析" class="headerlink" title="0.名词解析"></a>0.名词解析</h1><p>LSB: Least Significant Bit, 最低有效位，在二进制数中指最低位<br>MSB: Most Significant Bit, 最高有效位，与LSB相对<br>glitch: 指时钟信号中的毛刺<br>1’s complement: 反码表示<br>2’s complement: 补码表示<br>even: 偶数， odd: 奇数<br>Parity：校验<br>hexadceimal: 十六进制<br>decimal: 十进制<br>transition table: 状态转换表(左侧现态，右侧次态)<br>state diagram: 状态图<br>sequential circuit: 顺序电路(?)<br>magnitude: 数量级<br>asynchronous: 非同步的<br>one-shot circuit: 单稳态电路<br>retriggerable: 可重触发的</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/数电/" style="color: #03a9f4">
+                数电
+            </a>
+        </span>
+        
+    </div>
+    <a href="/2023/04/23/DigitalE/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/02/27/digitalD/">
+        <h2 class="post-title">数字电子技术(4)</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/学习笔记/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习笔记
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/27
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="卡诺图-The-Karnaugh-Map"><a href="#卡诺图-The-Karnaugh-Map" class="headerlink" title="卡诺图(The Karnaugh Map)"></a>卡诺图(The Karnaugh Map)</h1><p>在之前学过的布尔表达式的化简方法，在实际计算中显得繁琐，并且难以确定是否化到了最简型。卡诺图提供了一种系统性的方法来高效准确的简化布尔表达式。<br>对于卡诺图的构造，有一些基本要求：在卡诺图中，相邻单元的数据只有一个变量的值发生变化，并且左上角从全零开始。变量按数量进行均分，从列开始，记于行列上。若为奇数，少的一半放在列上，例如：</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/数电/" style="color: #03a9f4">
+                数电
+            </a>
+        </span>
+        
+    </div>
+    <a href="/2023/02/27/digitalD/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/02/20/digitalC/">
+        <h2 class="post-title">数字电子技术(3)</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/学习笔记/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习笔记
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/20
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="复合逻辑门：异或门、同或门、或非门、与非门"><a href="#复合逻辑门：异或门、同或门、或非门、与非门" class="headerlink" title="复合逻辑门：异或门、同或门、或非门、与非门"></a>复合逻辑门：异或门、同或门、或非门、与非门</h1><p>与非门(The NAND Gate)其实从本质上看就是与门与非门的结合，非门将与门输出的信号进行反向，在元件图像上来看也是如此。或非门(The NOR Gate)也是一样的机制，十分甚至九分相似。<br>异或门(The Exclusive-OR Gate, XOR)执行的是类似于比较的逻辑运算。异或门同样存在两个输入端和一个输出端，多输入异或门由多个基本异或门构成，当输入信号全部一致时，异或门输出低电平信号，而当输入信号存在不同时，输出高电平（着重在”异”上）。XOR的逻辑符号是一个被圆圈包围的加号。在国标中，这玩意的图形表示是一个方框，内写“=1”。</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/数电/" style="color: #03a9f4">
+                数电
+            </a>
+        </span>
+        
+    </div>
+    <a href="/2023/02/20/digitalC/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/02/16/digitalB/">
+        <h2 class="post-title">数字电子技术(2)</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/学习笔记/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习笔记
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/16
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h2 id="二进制编码：原码、反码与补码"><a href="#二进制编码：原码、反码与补码" class="headerlink" title="二进制编码：原码、反码与补码"></a>二进制编码：原码、反码与补码</h2><p>计算机以0和1的方式储存数据，任何十进制下的基本运算，在计算机中都要先转换为二进制编码进行运算。但计算机中只有加法器（曾经有减法器，但由于硬件开销太大取消了），因此，计算机无法直接处理二进制减法。但计算机中各种数据类型的储存量是有上限的，比如8位整型有符号数(8 bits signed number)的储存范围就是-128～127，并且有一个有趣的特性，当输入数据范围超过表示范围时，就会越过数据上限而从数据下限开始。比如127+1由于超过了表示上限，数据将会溢出，结果就会变成-128，由此，得出了一种代替减法的方法：将减法转换为加法。<br>为了了解减法是如何转换为加法的，首先要了解几个概念。</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/数电/" style="color: #ff7d73">
+                数电
+            </a>
+        </span>
+        
+    </div>
+    <a href="/2023/02/16/digitalB/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/02/13/digitalA/">
+        <h2 class="post-title">数字电子技术学习笔记 (1)</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/学习笔记/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习笔记
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/13
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <p>最近开始学习数电了，全英文教材实在是看得眼花缭乱、无从下笔。本文作为对课本学习内容的一点总结与整理，方便理解记忆知识。<br>使用的教材: Thomas L.Floyd《Digital Fundamentals》第十一版</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/数电/" style="color: #ff7d73">
+                数电
+            </a>
+        </span>
+        
+    </div>
+    <a href="/2023/02/13/digitalA/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/02/12/learnweb1/">
+        <h2 class="post-title">计算机网络-DNS基本原理</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/学习笔记/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习笔记
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/12
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <p>DNS</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/计算机网络/" style="color: #00bcd4">
+                计算机网络
+            </a>
+        </span>
+        
+    </div>
+    <a href="/2023/02/12/learnweb1/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2022/10/29/gossip/">
+        <h2 class="post-title">写在网管部招新之后</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/随笔/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                随笔
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2022/10/29
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <p>一直以来，总想在一些大事件之后随便写点东西，或是记录喜悦时刻，或是发发牢骚。奈何受限于人性懒惰，难于动笔，错过良多。拖至今日，深感不可再拖，遂记下所思所想，以供未来考古。</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/生活琐记/" style="color: #00a596">
+                生活琐记
+            </a>
+        </span>
+        
+    </div>
+    <a href="/2022/10/29/gossip/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2022/10/29/hello-world/">
+        <h2 class="post-title">Hello World</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2022/10/29
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <p>终于把静态网页部署整好了，浅浅庆祝一下</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2022/10/29/hello-world/" class="go-post">阅读全文</a>
+</div>
+
+             
+<div class="page-current">
+    <div class="prev">
+        
+    </div>
+    <div class="page-index">
+        
+        <span class="current">
+            1
+        </span>
+        
+    </div>
+    <div class="next">
+        
+    </div>
+</div>
+        </div>
+    </div>
+    
+    <div id="home-card">
+        <div id="card-div">
+    <div class="card-style" style="width: 300px">
+        <div class="avatar">
+            <img src="/a.png " alt="avatar">
+        </div>
+        <div class="name">
+            Cratileo
+        </div>
+        <div class="descriptions">
+            
+            <div class="description">
+                四海八方，皆为来客
+            </div>
+            
+        </div>
+        <div class="icon-links">
+            
+            <span class="icon-link">
+                <a target="_blank" rel="noopener" href="https://github.com/Cratileo">
+                    <i class="fa-brands fa-github fa-fw"></i>
+                </a>
+            </span>
+            
+            <span class="icon-link">
+                <a href="mailto:lincatRain@163.com">
+                    <i class="fa-solid fa-envelope fa-fw"></i>
+                </a>
+            </span>
+            
+        </div>
+        <div class="friend-links">
+            
+        </div>
+    </div>
+</div>
+    </div>
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Cratileo的小图书馆
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Cratileo
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas
+    id="fireworks"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+    <script src="/js/fireworks.js"></script>
+
+    <canvas
+    id="background"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1"></canvas>
+    <script src="/js/background.js"></script>
+        
+        
+    </body>
+</html>

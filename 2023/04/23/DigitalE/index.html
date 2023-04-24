@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>决战数电-复习补充 | Cratileo的小图书馆</title>
+        <meta name="author" content="Cratileo">
+        <meta name="description" content="欢迎来到这个偏僻的小图书馆">
+        <meta name="keywords" content="">
+        <link rel="icon" href="/a.png">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        
+        
+    <meta name="generator" content="Hexo 5.4.2"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Cratileo的小图书馆</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Cratileo的小图书馆</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>决战数电-复习补充 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/4/23
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习笔记/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习笔记
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/数电/" style="color: #ffa2c4">
+                    数电
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h1 id="0-名词解析"><a href="#0-名词解析" class="headerlink" title="0.名词解析"></a>0.名词解析</h1><p>LSB: Least Significant Bit, 最低有效位，在二进制数中指最低位<br>MSB: Most Significant Bit, 最高有效位，与LSB相对<br>glitch: 指时钟信号中的毛刺<br>1’s complement: 反码表示<br>2’s complement: 补码表示<br>even: 偶数， odd: 奇数<br>Parity：校验<br>hexadceimal: 十六进制<br>decimal: 十进制<br>transition table: 状态转换表(左侧现态，右侧次态)<br>state diagram: 状态图<br>sequential circuit: 顺序电路(?)<br>magnitude: 数量级<br>asynchronous: 非同步的<br>one-shot circuit: 单稳态电路<br>retriggerable: 可重触发的</p>
+<span id="more"></span>
+<h1 id="1-电路基本知识"><a href="#1-电路基本知识" class="headerlink" title="1.电路基本知识"></a>1.电路基本知识</h1><p>1-1. 重触发单稳态电路(Retriggerable one-shot circuit)<br>电路在触发时会存在一个“暂稳态”。对于不可重复触发电路，在进入暂稳态期间，触发脉冲对电路工作无影响，只有暂稳态结束后才能接受脉冲影响。而可重触发电路则没有这一限制，在暂稳态期间也可以接收脉冲信号，当接收到脉冲信号后，立即对电路进行重触发，使暂稳态延迟，直至触发脉冲的间隔超过单稳态输出脉宽，电路才返回稳态</p>
+<blockquote>
+<p>例如某可重触发电路的脉宽(pulse width)为10ms，在被触发3ms后，立即输入另一脉冲信号，则此时的最近的输出脉冲(output pulse)将会推迟3ms，即13ms</p>
+</blockquote>
+<p>1-2. 状态机<br>在这里只需要了解以下知识(应该吧)<br>Moore model: 该状态机的输出仅与当前状态有关<br>Mealy model: 该状态机的输出不仅与当前状态有关，还与输入有关</p>
+<p>1-3. 奇偶校验(Even odd parity)<br>奇偶校验一般选择在LSB位加校验码，校验规则是：<br>奇校验使数据流中存在奇数个1<br>偶校验使数据流中存在偶数个1</p>
+<p>1-4. 二进制/十进制快速转换<br>整数应该都很熟悉了，这里重点谈论小数<br><strong>注：这里不涉及float和double类型浮点数的转换（反正也不考）</strong><br>将十进制数转换为二进制小数，方法是对小数位不断乘2，然后取出整数位，继续这一步骤，直到小数位为0</p>
+<blockquote>
+<p>栗子: (5.8125)<br>0.8125x2 = 1.625 -&gt; 1<br>0.625x2  = 1.25  -&gt; 1<br>0.25x2   = 0.5   -&gt; 0<br>0.5x2    = 1.0   -&gt; 1<br>end,结果为101.1101</p>
+</blockquote>
+<h1 id="2-组合逻辑电路"><a href="#2-组合逻辑电路" class="headerlink" title="2.组合逻辑电路"></a>2.组合逻辑电路</h1><p>2-1. 锁存器(Latches)<br>锁存器有R-S锁存器，D锁存器，J-K锁存器等多种，实现有与非门和或非门两种，对于与非门锁存器，其信号是active-LOW的，而或非锁存器是active-HIGH的<br>对于S-R锁存器，其存在以下真值表<br><img src="/pic/E001.png" alt="S-R"></p>
+<blockquote>
+<p>当你无法判断那一大堆逻辑门结构到底是锁存器还是触发器的时候，就看它有没有时钟信号输入，所有的触发器都有时钟信号输入，如果没有就是锁存器<br>D锁存器和J-K锁存器的区别就是D锁存器只有一个输入端，而J-K锁存器有两个(触发器好像也一样)</p>
+</blockquote>
+<p>2-2. 触发器(Flip-flop)<br>触发器在这里就不过多提及了，注意触发信号是由时钟上沿触发(positive)还是下行触发(negitive)，后者与前者在器件上的不同在于后者在时钟信号输入端加了非门</p>
+<p>2-3. 二/十进制(BCD/DEC)转换器<br>对一般的BCD/DEC转换器，其一般存在4个输入端(A0-A3)对应四位二进制数，表示0-9，而输出端则是0-9十个端口对应十进制输出。每个十进制输出端都与其相应二进制表示对应，一个简单的栗子帮助理解：<br><img src="/pic/E002.png" alt="BCD"><br>当然该转换器也可以进行扩展</p>
+<p>2-4. 多路复用选择器(Multiplexer, MUX, Date selecter)<br>多路复用选择器一般存在n个S端(控制端)，和k个D端(选择端)。与BCD/DEC转换器的输入方式类似，也是由输入端按MSB到LSB构成一组二进制数表示，输入信号表示的二进制数转换为十进制后即对对应D端口信号进行选择输出，选中的那一路信号作为输出信号</p>
+<p>2-5. 数据分配器(Demultiplexer, DEMUX)<br>是MUX的逆操作，即将单路数据分配到多路。有1路Data Input输入和2路选择信号输入，在此类模型中，将拥有4路D0-D3输出。和MUX的逻辑相仿，S端输入什么二进制信号时，数据输入端的信号就将从对应的输出端流出。<br>当然，DEMUX也可以进行扩展</p>
+<p>2-6 比较器(Comparator)</p>
+<p>2-7 555定时器(The 555 timer)<br>对于555定时器，有以下公式：</p>
+<blockquote>
+<p>充电时间t1 = 0.693*(R1+R2)*C1<br>放电时间t2 = 0.693*R2*C1<br>脉冲宽度Tw = 1.1*R1*C1<br>周期T = t1 + t2 = 0.693(R1+2*R2)C1<br>频率f = 1/T = 1.44/((R1+2*R2)C1)<br>占空比t1/T = (R1+R2)/(R1+2*R2)</p>
+</blockquote>
+<p>公式列完了，来讲一点原理<br><img src="/pic/E003.png" alt="555"><br>图中所示的555定时器是一种无稳态电路，即OUT输出电压将会在自动在高低间变化</p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Cratileo的小图书馆
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Cratileo
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas
+    id="fireworks"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+    <script src="/js/fireworks.js"></script>
+
+    <canvas
+    id="background"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1"></canvas>
+    <script src="/js/background.js"></script>
+        
+        
+    </body>
+</html>
