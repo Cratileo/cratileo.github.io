@@ -152,7 +152,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/数电/" style="color: #00bcd4">
+                <a href="/tags/数电/" style="color: #03a9f4">
                     数电
                 </a>
             </span>
@@ -191,13 +191,20 @@
 <blockquote>
 <p>1.同步计数器在外部信号到来时触发器同时翻转；而异步计数器的触发器为串行连接，工作频率较低<br>2.异步计数器输出状态的建立，要比时钟慢一个传输时间，容易存在逻辑冒险</p>
 </blockquote>
-<p><img src="/pic/E007.png" alt="“异步计数器”"> | <img src="/pic/E008.png" alt="“异步时钟延迟”"><br>假定有n个触发器组成的异步计数器，其中单个触发器的延迟为10ns，则该计数器的传播延迟(Propagation delay)tp = n*10 ns,最小周期T = tp，最大时钟频率(maximum clock frequency)f = 1/T</p>
+<p><img src="/pic/E007.png" alt="“异步计数器”"> <img src="/pic/E008.png" alt="“异步时钟延迟”"><br>假定有n个触发器组成的异步计数器，其中单个触发器的延迟为10ns，则该计数器的传播延迟(Propagation delay)tp = n*10 ns,最小周期T = tp，最大时钟频率(maximum clock frequency)f = 1/T</p>
 <p>2-8-2. 分频器与模n计数器<br><img src="/pic/E009.png" alt="ddd"><br>上图所示的微集成电路即为模n计数器，其C端输入同时也作为分频器使用。对该计数器而言，其模即为计数器上标识的数字，而时钟信号在接入C端口后也将会减少n倍，对多个计数器串联组成的电路而言，总模数等于各计数器模数和，总时延(tp)为各计数器之和，最小周期和最大时钟频率参照异步计数器。</p>
 <blockquote>
 <p>栗子：对上图的计数器，总模(modulus)为200(= 4*10*5)，计数器输出频率(output frequency)为20Khz(= 4Mhz/4/10/5),假定每个边缘J-K触发器的时延为10ns，则最大时钟频率f = 33.3 MHz</p>
 </blockquote>
-<p>2-8-3. 同步计数器(Synchronous Counter)</p>
-<h1 id="3-计数器设计"><a href="#3-计数器设计" class="headerlink" title="3. 计数器设计"></a>3. 计数器设计</h1>
+<p>2-8-3. 同步计数器(Synchronous Counter)<br>(好像没啥好说的)</p>
+<h1 id="3-计数器设计"><a href="#3-计数器设计" class="headerlink" title="3. 计数器设计"></a>3. 计数器设计</h1><p>几个名词解析<br>Excitation equation: 激励方程(时序电路中触发器的输入方程，“激励”嘛，就像基电那个激励源)<br>Transition equation: 次态方程(可以理解为以Qn为自变量，Qn+1为因变量的方程，指出状态变化间的关系)<br>Characteristic equation:  特性方程（就是逻辑器件本身的端口特性方程，如下图）<br><img src="/pic/E010.png" alt="d"> <img src="/pic/E011.png" alt="dd"></p>
+<blockquote>
+<p><strong>5步解析计数器分析</strong><br>列激励方程和输出方程 -&gt; 列次态方程 -&gt;写状态转移表 -&gt; 列次态表 -&gt; 画状态转移图和时序图<br>（但是一般不用分析而是设计）</p>
+</blockquote>
+<blockquote>
+<p><strong>5步解析计数器设计</strong><br>画状态转移图(圆圈圈) -&gt; 得次态表 -&gt; 从次态表对应列得每一个触发器输入端的变化 -&gt; 通过变化填卡诺图 -&gt;从卡诺图写触发器输入激励方程(J=xxx,K=xxx) -&gt; 画图<br>部分步骤的栗子: <img src="/pic/E012.png" alt="example"></p>
+</blockquote>
+
     </div>
     
     
