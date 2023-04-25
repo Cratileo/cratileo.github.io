@@ -152,7 +152,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/数电/" style="color: #ffa2c4">
+                <a href="/tags/数电/" style="color: #00bcd4">
                     数电
                 </a>
             </span>
@@ -161,7 +161,7 @@
         
     </div>
     <div class="content" v-pre>
-        <h1 id="0-名词解析"><a href="#0-名词解析" class="headerlink" title="0.名词解析"></a>0.名词解析</h1><p>LSB: Least Significant Bit, 最低有效位，在二进制数中指最低位<br>MSB: Most Significant Bit, 最高有效位，与LSB相对<br>glitch: 指时钟信号中的毛刺<br>1’s complement: 反码表示<br>2’s complement: 补码表示<br>even: 偶数， odd: 奇数<br>Parity：校验<br>hexadceimal: 十六进制<br>decimal: 十进制<br>transition table: 状态转换表(左侧现态，右侧次态)<br>state diagram: 状态图<br>sequential circuit: 顺序电路(?)<br>magnitude: 数量级<br>asynchronous: 非同步的<br>one-shot circuit: 单稳态电路<br>retriggerable: 可重触发的</p>
+        <h1 id="0-名词解析"><a href="#0-名词解析" class="headerlink" title="0.名词解析"></a>0.名词解析</h1><p>LSB: Least Significant Bit, 最低有效位，在二进制数中指最低位<br>MSB: Most Significant Bit, 最高有效位，与LSB相对<br>glitch: 指时钟信号中的毛刺<br>1’s complement: 反码表示<br>2’s complement: 补码表示<br>even: 偶数， odd: 奇数<br>Parity：校验<br>hexadceimal: 十六进制<br>decimal: 十进制<br>transition table: 状态转换表(左侧现态，右侧次态)<br>state diagram: 状态图<br>sequential circuit: 顺序电路(?)<br>magnitude: 数量级<br>asynchronous: 非同步的<br>one-shot circuit: 单稳态电路<br>retriggerable: 可重触发的<br>serial: 串行<br>parallel: 并行</p>
 <span id="more"></span>
 <h1 id="1-电路基本知识"><a href="#1-电路基本知识" class="headerlink" title="1.电路基本知识"></a>1.电路基本知识</h1><p>1-1. 重触发单稳态电路(Retriggerable one-shot circuit)<br>电路在触发时会存在一个“暂稳态”。对于不可重复触发电路，在进入暂稳态期间，触发脉冲对电路工作无影响，只有暂稳态结束后才能接受脉冲影响。而可重触发电路则没有这一限制，在暂稳态期间也可以接收脉冲信号，当接收到脉冲信号后，立即对电路进行重触发，使暂稳态延迟，直至触发脉冲的间隔超过单稳态输出脉宽，电路才返回稳态</p>
 <blockquote>
@@ -181,13 +181,13 @@
 <p>2-3. 二/十进制(BCD/DEC)转换器<br>对一般的BCD/DEC转换器，其一般存在4个输入端(A0-A3)对应四位二进制数，表示0-9，而输出端则是0-9十个端口对应十进制输出。每个十进制输出端都与其相应二进制表示对应，一个简单的栗子帮助理解：<br><img src="/pic/E002.png" alt="BCD"><br>当然该转换器也可以进行扩展</p>
 <p>2-4. 多路复用选择器(Multiplexer, MUX, Date selecter)<br>多路复用选择器一般存在n个S端(控制端)，和k个D端(选择端)。与BCD/DEC转换器的输入方式类似，也是由输入端按MSB到LSB构成一组二进制数表示，输入信号表示的二进制数转换为十进制后即对对应D端口信号进行选择输出，选中的那一路信号作为输出信号</p>
 <p>2-5. 数据分配器(Demultiplexer, DEMUX)<br>是MUX的逆操作，即将单路数据分配到多路。有1路Data Input输入和2路选择信号输入，在此类模型中，将拥有4路D0-D3输出。和MUX的逻辑相仿，S端输入什么二进制信号时，数据输入端的信号就将从对应的输出端流出。<br>当然，DEMUX也可以进行扩展</p>
-<p>2-6 比较器(Comparator)</p>
-<p>2-7 555定时器(The 555 timer)<br>对于555定时器，有以下公式：</p>
+<p>2-6. 比较器(Comparator)<br>比较器有两种，一种是逻辑结构，另一种是中规模集成电路<br><img src="/pic/E004.png" alt="cmp"><br>第一种比较器的逻辑十分简单：对于VI+和VI-两个输入端口，若VI+&gt;VI-,则输出HIGH，反之输出LOW<br>而对于第二种比较器，其输入扩展为对两个n位二进制数，以下以4位比较器为例：<br><img src="/pic/E006.png" alt="cmp"><br>这种比较器的逻辑直观上来看也十分简单，不就是从MSB到LSB进行比较，看比较结果从对应输出位输出HIGH嘛（</p>
+<p>2-7. 555定时器(The 555 timer)<br>对于555定时器，有以下公式：</p>
 <blockquote>
 <p>充电时间t1 = 0.693*(R1+R2)*C1<br>放电时间t2 = 0.693*R2*C1<br>脉冲宽度Tw = 1.1*R1*C1<br>周期T = t1 + t2 = 0.693(R1+2*R2)C1<br>频率f = 1/T = 1.44/((R1+2*R2)C1)<br>占空比t1/T = (R1+R2)/(R1+2*R2)</p>
 </blockquote>
-<p>公式列完了，来讲一点原理<br><img src="/pic/E003.png" alt="555"><br>图中所示的555定时器是一种无稳态电路，即OUT输出电压将会在自动在高低间变化</p>
-
+<p>公式列完了，来讲一点原理<br><img src="/pic/E003.png" alt="555"><br>图中所示的555定时器是一种无稳态电路，即OUT输出电压将会在自动在高低间变化。对于C2，一般总是为一个0.01uF的电容(理论上该路也可以悬空，但不建议这么做)<br><img src="/pic/E005.png" alt="555"><br>对555定时器而言，在其触发信号的一个周期内，输出信号会经历从充电到放电的全过程。一般在触发信号下沿时开始充电，而在另一触发信号下沿时放电结束。<br>(待施工)</p>
+<h1 id="3-计数器设计"><a href="#3-计数器设计" class="headerlink" title="3. 计数器设计"></a>3. 计数器设计</h1>
     </div>
     
     

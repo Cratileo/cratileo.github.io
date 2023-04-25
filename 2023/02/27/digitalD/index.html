@@ -152,7 +152,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/数电/" style="color: #00a596">
+                <a href="/tags/数电/" style="color: #ff7d73">
                     数电
                 </a>
             </span>
@@ -173,7 +173,9 @@
 <p>当然，得到具体的卡诺图之后，也可以在SOP与POS之间进行交换，即：对一个卡诺图可以任意进行0或1的分组。无论是SOP最简式还是POS最简式，都是最简式，且并不唯一，两者之间不跨范围比较。</p>
 <h1 id="Quine-McCluskey-Method"><a href="#Quine-McCluskey-Method" class="headerlink" title="Quine McCluskey Method"></a>Quine McCluskey Method</h1><p>对于含五个以上变量的卡诺图，常规的分组简化方法已经变得很难实现，为了简化这样的多变量布尔表达式，这里再次引入一种新的分组方法。<br>这种分组方法不是依赖卡诺图来实现，而是通过真值表写出。首先，将每个结果为1的表达式写出，记为m0到mi，/(Under building)<br><strong>一般不考，不写了（懒）</strong></p>
 <h1 id="半加器与全加器"><a href="#半加器与全加器" class="headerlink" title="半加器与全加器"></a>半加器与全加器</h1><p>半加器(half-adder)，是加法器的一种，其没有进位输入端（Carry input）。全加器(Full-adder)与半加器的区别是其有三个输入端，包括半加器不包含的进位输入，这使得全加器能够进行完全的加法操作。全加器的实现是由两个半加器组成的</p>
-<h1 id="加法器的构建"><a href="#加法器的构建" class="headerlink" title="加法器的构建"></a>加法器的构建</h1><p>n位加法器由n个全加器相连组成，其中A1-An作为第一个n位数的输入端，B1-Bn为第二个数的输入端，全加器的Sum输出该位的进位结果给下一位的全加器C端，最低位全加器C端接地。</p>
+<h1 id="加法器的构建"><a href="#加法器的构建" class="headerlink" title="加法器的构建"></a>加法器的构建</h1><p>n位加法器由n个全加器相连组成，其中A1-An作为第一个n位数的输入端，B1-Bn为第二个数的输入端，全加器的Cout输出该位的进位结果给下一位的全加器Cin端，最低位全加器Cin端接地。</p>
+<h1 id="行波进位加法器-Ripple-Carry-Adder"><a href="#行波进位加法器-Ripple-Carry-Adder" class="headerlink" title="行波进位加法器(Ripple Carry Adder)"></a>行波进位加法器(Ripple Carry Adder)</h1><p>行波进位加法器又称串行进位加法器，由名字可知，这是以并行方式对数据按位进行处理的一种加法器，即：从最低位到最高位的全加器串行连接，低位进位运算结果出来以后才能进行下一位的运算。对于这种加法器，其执行一次操作所需要的时间为每个全加器时延的总和。</p>
+<h1 id="超前进位加法器-Look-Ahead-Carry-Adder"><a href="#超前进位加法器-Look-Ahead-Carry-Adder" class="headerlink" title="超前进位加法器(Look-Ahead Carry Adder)"></a>超前进位加法器(Look-Ahead Carry Adder)</h1><p>由于行波进位加法器的延迟是线性的，即：所处理数的位数越多，总时延越高。当需要对两个多位数进行处理时，行波进位加法器的延迟将会变得很高，为此，出现了超前进位加法器。<br>超前进位加法器通过进位发生和进位传递来预测每一位的进位输出。这样其在最优情况下的时延仅为一个全加器的延迟。比行波进位加法器快得多。</p>
 
     </div>
     
