@@ -132,7 +132,7 @@
             <span class="icon">
                 <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
             </span>
-            2023/10/15
+            2023/10/14
         </span>
         
         <span class="category">
@@ -152,7 +152,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Linux/" style="color: #03a9f4">
+                <a href="/tags/Linux/" style="color: #00a596">
                     Linux
                 </a>
             </span>
@@ -162,8 +162,17 @@
     </div>
     <div class="content" v-pre>
         <p>第一天开始在实验室打工，照例要先配好环境后再开始操作。本来想着好歹以前在stable difussion大热时也在腾讯云用过服务器，应该不是太难，结果这次几乎把所有能遇到的问题全部碰了一遍，<span id="more"></span></p>
-<h1 id="0-先帝创业未半而中道崩殂？"><a href="#0-先帝创业未半而中道崩殂？" class="headerlink" title="0.先帝创业未半而中道崩殂？"></a>0.先帝创业未半而中道崩殂？</h1><p>昨天晚上第一次和学长进行了愉快的友好交流后，拿到了实验室的集群服务器账号，选好镜像创建实例之后就没再管它，开始折腾ssh，结果ssh登录一直超时，正觉疑惑之时，回面板一看，实例压根就没开机。<br>合着折腾半天我在和空气斗智斗勇是吧，行吧，那先想办法开机，结果重启实例压根不起作用，任你怎么按，其就是巍然不动。无奈去求助学长，结果这个问题让他也摸不着头脑。行，遇见玄学问题了，遵循重启-重装-重买三步走原则，那就换服务器重装试试，结果没想到，在按下删除实例按钮的那一刻，实例没有删除，反而神奇的开始跑起来了<br><img src="/pic/p001.jpg#pic_left" alt="?"><br>啊？怎么回事？发生了什么？它怎么就开始跑了？我知道深度学习是赛博炼丹，但也不能这么玄学啊。但不管怎么样，至少它跑起来了。看上去最大的困难已经解决了，但路上的坑还在暗处等着我一个个去踩，而且和这个问题一样，都很玄学。</p>
-<h1 id="1-出发，但网络有问题"><a href="#1-出发，但网络有问题" class="headerlink" title="1.出发，但网络有问题"></a>1.出发，但网络有问题</h1><p>未完待续</p>
+<h1 id="0-先帝创业未半而中道崩殂？"><a href="#0-先帝创业未半而中道崩殂？" class="headerlink" title="0.先帝创业未半而中道崩殂？"></a>0.先帝创业未半而中道崩殂？</h1><p>昨天晚上第一次和学长进行了愉快的友好交流后，拿到了实验室的集群服务器账号，选好镜像创建实例之后就没再管它，开始折腾ssh，结果ssh登录一直超时，正觉疑惑之时，回面板一看，实例压根就没开机。<br>合着折腾半天我在和空气斗智斗勇是吧，行吧，那先想办法开机，结果重启实例压根不起作用，任你怎么按，其就是巍然不动。无奈去求助学长，结果这个问题让他也摸不着头脑。行，遇见玄学问题了，遵循重启-重装-重买三步走原则，那就换服务器重装试试，结果没想到，在按下删除实例按钮的那一刻，实例没有删除，反而神奇的开始跑起来了<br><img src="/pic/p001.jpg#pic_left" alt="?"><br>啊？怎么回事？发生了什么？它怎么就开始跑了？我知道深度学习是赛博炼丹，但也不能这么玄学啊。但不管怎么样，至少它跑起来了。看上去最大的困难已经解决了，但玄学之路源远流长，岂是这么容易就能通过的。</p>
+<h1 id="1-出发，但网络有问题"><a href="#1-出发，但网络有问题" class="headerlink" title="1.出发，但网络有问题"></a>1.出发，但网络有问题</h1><p>上机之后先更新apt，把诸如fish，vim，ssh都给装上，直到这里都还一切顺利。由于此时已入深夜，打算把ssh挪到明天再弄，先把简单的anaconda整备好，但没想到在这里又出了意外。首先是镜像源的选择，意料之外但又情理之中的是：SJTUG又不行了<del>（果然关键时刻还得靠友校）</del>，换清华源，但wget时却被403挡了</p>
+<blockquote>
+<p>root@114514 ~# wget -c “<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2023.09-0-Linux-x86_64.sh&quot;">https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2023.09-0-Linux-x86_64.sh&quot;</a><br>运行结果：<br>–2023-10-13 23:26:40–  <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2023.09-0-Linux-x86_64.sh">https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2023.09-0-Linux-x86_64.sh</a><br>Resolving mirrors.tuna.tsinghua.edu.cn (mirrors.tuna.tsinghua.edu.cn)… 101.6.15.130, 2402:f000:1:400::2<br>Connecting to mirrors.tuna.tsinghua.edu.cn (mirrors.tuna.tsinghua.edu.cn)|101.6.15.130|:443… connected.<br>HTTP request sent, awaiting response… 403 Forbidden<br>2023-10-13 23:26:40 ERROR 403: Forbidden.</p>
+</blockquote>
+<p>不是这又怎么了，镜像站怎么还挡人的，再尝试一下curl，结果弹出来以下信息：<br><img src="/pic/terminal.png" alt="?"><br>嗯…..好吧，只能修改请求头user-agent了（谁让SJTUG不给力），最后wget命令变得十分冗长</p>
+<blockquote>
+<p>wget -c <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2023.09-0-Linux-x86_64.sh">https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2023.09-0-Linux-x86_64.sh</a> -U ‘Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36’</p>
+</blockquote>
+<p>SJTUG你该给点力别挂了（恼）<br>废了九牛二虎之力下载下来以后，麻烦还没完，到安装的时候又遇到了新问题（三回啊三回），一运行就报Syntax error: “(“ unexpected，这已经是root在跑了啊，总不能权限不足吧。拉锯几分钟未果后，再次贯彻重启-重装-重买原则，重新下载了一遍，这次终于能运行了<del>（很难不怀疑友校是不是在下载上做了什么手脚）</del></p>
+<h1 id="2-在地图上不能一键传送怎么办"><a href="#2-在地图上不能一键传送怎么办" class="headerlink" title="2. 在地图上不能一键传送怎么办"></a>2. 在地图上不能一键传送怎么办</h1><p>那之后conda的安装和配置倒没有闹出什么大的幺蛾子，随着时钟转了一圈，时间来到了第二天，作为懒人，当然不想每次都去用网页访问，那就该配置ssh这个传送点了<br>（未完待续）</p>
 
     </div>
     
