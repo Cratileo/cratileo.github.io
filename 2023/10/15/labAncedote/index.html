@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-        <title>数字电子技术(3) | Cratileo的小图书馆</title>
+        <title>从0开始的pytorch环境配置之路 | Cratileo的小图书馆</title>
         <meta name="author" content="Cratileo">
         <meta name="description" content="欢迎来到这个偏僻的小图书馆">
         <meta name="keywords" content="">
@@ -125,22 +125,22 @@
                         
 <div class="article">
     <div>
-        <h1>数字电子技术(3) </h1>
+        <h1>从0开始的pytorch环境配置之路 </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
             </span>
-            2023/2/20
+            2023/10/15
         </span>
         
         <span class="category">
-            <a href="/categories/学习笔记/">
+            <a href="/categories/打工日常/">
                 <span class="icon">
                     <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
                 </span>
-                学习笔记
+                打工日常
             </a>
         </span>
         
@@ -152,8 +152,8 @@
             
             <span class="tag">
                 
-                <a href="/tags/数电/" style="color: #03a9f4">
-                    数电
+                <a href="/tags/Linux/" style="color: #03a9f4">
+                    Linux
                 </a>
             </span>
             
@@ -161,24 +161,9 @@
         
     </div>
     <div class="content" v-pre>
-        <h1 id="复合逻辑门：异或门、同或门、或非门、与非门"><a href="#复合逻辑门：异或门、同或门、或非门、与非门" class="headerlink" title="复合逻辑门：异或门、同或门、或非门、与非门"></a>复合逻辑门：异或门、同或门、或非门、与非门</h1><p>与非门(The NAND Gate)其实从本质上看就是与门与非门的结合，非门将与门输出的信号进行反向，在元件图像上来看也是如此。或非门(The NOR Gate)也是一样的机制，十分甚至九分相似。<br>异或门(The Exclusive-OR Gate, XOR)执行的是类似于比较的逻辑运算。异或门同样存在两个输入端和一个输出端，多输入异或门由多个基本异或门构成，当输入信号全部一致时，异或门输出低电平信号，而当输入信号存在不同时，输出高电平（着重在”异”上）。XOR的逻辑符号是一个被圆圈包围的加号。在国标中，这玩意的图形表示是一个方框，内写“=1”。</p>
-<span id="more"></span>同或门(The Exclusive-NOR Gate, XNOR)与异或门类似，也是一种进行比较运算的逻辑门。不同的是，同或门进行的是输入相同时输出高电平、不同时输出低电平的运算，与异或门相反（着重于"同"）。也可以将同或门看作异或门与非门的组合（异或非门）。XNOR的符号是一个被圆圈包围的点。同或门的国标图像和异或门差不多，就是在输出端多了个非(小圆圈)。
-
-<p>NAND Gate 与 NOR Gate也可以相互转化，例如：可以用两个与非门构成一个或非门，倒过来也一样，两个或非门构成一个与非门。</p>
-<blockquote>
-<p>NOR(A, B) = NAND(NAND(A, A), NAND(B, B))<br>NAND(A, B) = NOR(NOR(A, A), NOR(B, B))</p>
-</blockquote>
-<h1 id="固定函数逻辑门与可编程逻辑"><a href="#固定函数逻辑门与可编程逻辑" class="headerlink" title="固定函数逻辑门与可编程逻辑"></a>固定函数逻辑门与可编程逻辑</h1><p>固定函数逻辑门(Fixed Function Logic Gate)，是一种已经固定功能的逻辑门，固定功能的芯片就是由这类逻辑门构成。而可编程逻辑的功能并不固定，可以人为进行改变调整，各类CPU、单片机芯片就是这类逻辑。其底层实现不属于数电的研究范畴。</p>
-<h1 id="布尔运算及其表达式"><a href="#布尔运算及其表达式" class="headerlink" title="布尔运算及其表达式"></a>布尔运算及其表达式</h1><p>布尔运算(Boolean Opreation)是布尔代数的一套运算系统，由且仅由0、1构成，在运算时仅保留最高位数字，即1+1=1。<br>布尔加运算(Boolean Addition)与代数加法一致，在电路中的实现由逻辑门中的或运算完成。布尔乘法(Boolean Multiplication)也与代数乘法一致，，比如1x0=0，在电路中由与逻辑门实现。<br>布尔运算也满足初等代数的交换律与结合律。<br><strong>布尔运算的一些运算定律</strong><br>下面有12条运算规则：(A B C可为任意独立组合)<br><img src="/pic/D301.png" alt="12"></p>
-<blockquote>
-<p>德摩根定律(DeMorgan’s Theorems):<br>$$\overline{XY}=\overline{X}+\overline{Y}$$<br>$$\overline{X+Y}=\overline{X}\overline{Y}$$<br>多余项乘积定理(Consensus Theorem),算数式表现为：</p>
-</blockquote>
-<h1 id="布尔运算化简与转化的几种形式"><a href="#布尔运算化简与转化的几种形式" class="headerlink" title="布尔运算化简与转化的几种形式"></a>布尔运算化简与转化的几种形式</h1><p>先介绍一下SOP和POS。<br>标准SOP(Standard Sum of Product)是将复杂布尔表达式化简为多项最小乘积项的和，以下是一些规则：</p>
-<blockquote>
-<p>乘积中不得含有重复变量，比如AAB<br>每项中的变量只能独立取反，<br>每一项中均含有所有的变量<br>满足以上条件的每项乘积项称为最小项(Minterm).</p>
-</blockquote>
-<p>将SOP转化为Standard SOP的方法：若某一乘积项中缺少某个变量，对该项乘以缺少变量与其的反的和然后拆开，例如：<br>同样的，标准POS(Product of Sum)是将复杂布尔表达式化简为多项最小和的积，规则与Standard SOP类似。满足POS规则的每一求和项称为最大项(Maxterm)。<br>将POS转化为标准POS的方法:若某一求和项中缺少某个变量，则将缺少的变量及其反变量的乘积加在缺少项中，然后展开。</p>
-<h1 id="布尔表达式与真值表"><a href="#布尔表达式与真值表" class="headerlink" title="布尔表达式与真值表"></a>布尔表达式与真值表</h1><p>真值表(Truth table)是直观反应各变量与布尔表达式的关系的表格，现在重新提及标准SOP和标准POS。这两种标准表达式使得变量值与真值表输出值的对应关系变得十分明朗直观。对于SOP，能很容易找到输出为1的情况；而对于POS，则是能很快找到输出为0的情况。<br>下面给出一个例子：</p>
+        <p>第一天开始在实验室打工，照例要先配好环境后再开始操作。本来想着好歹以前在stable difussion大热时也在腾讯云用过服务器，应该不是太难，结果这次几乎把所有能遇到的问题全部碰了一遍，<span id="more"></span></p>
+<h1 id="0-先帝创业未半而中道崩殂？"><a href="#0-先帝创业未半而中道崩殂？" class="headerlink" title="0.先帝创业未半而中道崩殂？"></a>0.先帝创业未半而中道崩殂？</h1><p>昨天晚上第一次和学长进行了愉快的友好交流后，拿到了实验室的集群服务器账号，选好镜像创建实例之后就没再管它，开始折腾ssh，结果ssh登录一直超时，正觉疑惑之时，回面板一看，实例压根就没开机。<br>合着折腾半天我在和空气斗智斗勇是吧，行吧，那先想办法开机，结果重启实例压根不起作用，任你怎么按，其就是巍然不动。无奈去求助学长，结果这个问题让他也摸不着头脑。行，遇见玄学问题了，遵循重启-重装-重买三步走原则，那就换服务器重装试试，结果没想到，在按下删除实例按钮的那一刻，实例没有删除，反而神奇的开始跑起来了<br><img src="/pic/p001.jpg#pic_left" alt="?"><br>啊？怎么回事？发生了什么？它怎么就开始跑了？我知道深度学习是赛博炼丹，但也不能这么玄学啊。但不管怎么样，至少它跑起来了。看上去最大的困难已经解决了，但路上的坑还在暗处等着我一个个去踩，而且和这个问题一样，都很玄学。</p>
+<h1 id="1-出发，但网络有问题"><a href="#1-出发，但网络有问题" class="headerlink" title="1.出发，但网络有问题"></a>1.出发，但网络有问题</h1><p>未完待续</p>
 
     </div>
     
