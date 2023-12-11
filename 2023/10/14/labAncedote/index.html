@@ -152,7 +152,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Linux/" style="color: #00a596">
+                <a href="/tags/Linux/" style="color: #03a9f4">
                     Linux
                 </a>
             </span>
@@ -172,7 +172,13 @@
 <p>wget -c <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2023.09-0-Linux-x86_64.sh">https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2023.09-0-Linux-x86_64.sh</a> -U ‘Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36’</p>
 </blockquote>
 <p>SJTUG你该给点力别挂了（恼）<br>废了九牛二虎之力下载下来以后，麻烦还没完，到安装的时候又遇到了新问题（三回啊三回），一运行就报Syntax error: “(“ unexpected，这已经是root在跑了啊，总不能权限不足吧。拉锯几分钟未果后，再次贯彻重启-重装-重买原则，重新下载了一遍，这次终于能运行了<del>（很难不怀疑友校是不是在下载上做了什么手脚）</del></p>
-<h1 id="2-在地图上不能一键传送怎么办"><a href="#2-在地图上不能一键传送怎么办" class="headerlink" title="2. 在地图上不能一键传送怎么办"></a>2. 在地图上不能一键传送怎么办</h1><p>那之后conda的安装和配置倒没有闹出什么大的幺蛾子，随着时钟转了一圈，时间来到了第二天，作为懒人，当然不想每次都去用网页访问，那就该配置ssh这个传送点了<br>（未完待续）</p>
+<h1 id="2-在地图上不能一键传送怎么办"><a href="#2-在地图上不能一键传送怎么办" class="headerlink" title="2.在地图上不能一键传送怎么办"></a>2.在地图上不能一键传送怎么办</h1><p>那之后conda的安装和配置倒没有闹出什么大的幺蛾子，随着时钟转了一圈，时间来到了第二天，作为懒人，当然不想每次都去用网页访问，那就该配置ssh这个传送点了。但ssh武功高强，与其大战二十回都败北而归。无论是公钥登录还是密码登录都不能破其招数。但其中最令人绝望的还属对方不讲武德：由于公钥登录无望，于是干脆心一横，修改配置关闭了密码登录，以此希望逼出对方绝招，但不成想ssh不讲武德，仍然无视公钥继续索要密码。这已经不是一般的ssh了，必须要出重拳，于是疯狂重启ssh服务,下面两个命令都快把键盘敲烂了</p>
+<blockquote>
+<p>/etc/init.d/ssh restart  //重启ssh服务<br>/etc/init.d/ssh status   //查看ssh服务状态</p>
+</blockquote>
+<p>但奈何对方确实不讲武德，油盐不进。可恶，难道旅途还未开始就要结束了吗。</p>
+<h1 id="3-最后还是靠天降奇兵解决吗？"><a href="#3-最后还是靠天降奇兵解决吗？" class="headerlink" title="3.最后还是靠天降奇兵解决吗？"></a>3.最后还是靠天降奇兵解决吗？</h1><p>然后就是十分传统的剧情了：求助学长，机械降神，问题解决。但问题其实并没有被完全解决，而是被转移掉了。用了之前的祖传镜像，虽然能开箱即用，但毕竟是祖传，各种组件的版本都已过于陈旧，急需翻新。Ubuntu18.04我是不知道怎么翻新了，但torch和cuda还是必须翻新的，可陈旧的显卡驱动程序把cuda版本上限限制在了11.4。torch版本也被限制在了1.12.1。虽然不是不能用，并且一味追求最新容易翻车，但按时适当更新版本框架是避免屎山产生的重要指导思想。于是，对陈旧驱动的拉锯战开始了。</p>
+<h1 id="4-你说得对，但是"><a href="#4-你说得对，但是" class="headerlink" title="4.你说得对，但是"></a>4.你说得对，但是</h1><p>现存的驱动版本是470.86，最大支持CUDA11.4，考虑到还要兼容实验室的祖传代码，于是打算更新到中间版本526.60.11，支持CUDA11.8（待续）</p>
 
     </div>
     
